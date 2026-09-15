@@ -8,6 +8,9 @@ FROM base AS build
 ARG URL
 ENV NUXT_PUBLIC_URL=${URL}
 
+RUN apk add --no-cache python3
+
+
 COPY --link package.json yarn.lock ./
 
 RUN yarn install --frozen-lockfile
@@ -20,7 +23,7 @@ RUN yarn build
 FROM base
 
 # Install curl for health checks
-RUN apk add --no-cache curl python3
+RUN apk add --no-cache curl
 
 ENV NODE_ENV=production
 ENV NUXT_HOST=0.0.0.0
