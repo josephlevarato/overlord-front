@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 WORKDIR /src
 
@@ -20,7 +20,7 @@ RUN yarn build
 FROM base
 
 # Install curl for health checks
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl python3
 
 ENV NODE_ENV=production
 ENV NUXT_HOST=0.0.0.0
