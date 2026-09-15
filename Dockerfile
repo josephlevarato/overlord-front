@@ -8,7 +8,7 @@ FROM base AS build
 ARG URL
 ENV NUXT_PUBLIC_URL=${URL}
 
-RUN apk add --no-cache python3
+RUN apk add --no-cache python3 make
 
 
 COPY --link package.json yarn.lock ./
