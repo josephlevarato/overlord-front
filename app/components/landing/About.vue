@@ -21,19 +21,19 @@ const { data: about } = await useAsyncData('about', () => queryCollection('about
                         <VHover v-slot="{ isHovering, props }">
                             <div v-bind="props" class="image-wrapper">
                                 <VImg
+                                    :class="{ 'about-image-hover': isHovering }"
                                     src="/images/joseph.jpeg"
                                     alt="About me"
                                     class="about-image"
-                                    :class="{ 'about-image-hover': isHovering }"
-                                    cover
                                     max-height="600"
                                     width="100%"
+                                    cover
                                 />
                                 <VOverlay
                                     :model-value="isHovering ?? false"
-                                    contained
                                     scrim="rgba(98, 0, 238, 0.5)"
                                     class="overlay-transition"
+                                    contained
                                 />
                             </div>
                         </VHover>
@@ -44,7 +44,10 @@ const { data: about } = await useAsyncData('about', () => queryCollection('about
                     md="6"
                     class="d-flex align-center"
                 >
-                    <VCard variant="outlined">
+                    <VCard
+                        variant="outlined"
+                        class="about-card"
+                    >
                         <template #text>
                             <ContentRenderer v-if="about" :value="about" />
                         </template>
@@ -84,5 +87,10 @@ const { data: about } = await useAsyncData('about', () => queryCollection('about
 
 .overlay-transition {
     transition: opacity 0.3s ease-in-out;
+}
+
+.about-card {
+    border-color: rgba(var(--v-theme-primary), 0.5);
+    height: 100%;
 }
 </style>

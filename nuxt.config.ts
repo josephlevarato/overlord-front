@@ -3,7 +3,7 @@ import { md3 } from 'vuetify/blueprints'
 
 export default defineNuxtConfig({
     ssr: true,
-    compatibilityDate: '2025-05-15',
+    compatibilityDate: '2026-09-15',
     devtools: { enabled: true },
     site: {
         name: 'Joseph Levarato',
@@ -104,8 +104,8 @@ export default defineNuxtConfig({
             api: 'https://api.nuxt.studio',
             gitInfo: {
                 name: 'overlord-front',
-                owner: 'Drillan767',
-                url: 'https://github.com/Drillan767/overlord-front',
+                owner: 'josephlevarato',
+                url: 'https://github.com/josephlevarato/overlord-front',
             },
         },
         build: {
