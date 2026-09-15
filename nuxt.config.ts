@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     ssr: true,
     compatibilityDate: '2025-05-15',
     devtools: { enabled: true },
+    site: {
+        name: 'Joseph Levarato',
+    },
     css: [
         '@/assets/styles/main.css',
     ],
@@ -18,6 +21,9 @@ export default defineNuxtConfig({
         '@nuxtjs/seo',
     ],
     vuetify: {
+        moduleOptions: {
+            prefixComposables: true,
+        },
         vuetifyOptions: {
             blueprint: md3,
             theme: {
@@ -51,8 +57,6 @@ export default defineNuxtConfig({
                 class: 'bg-black',
             },
 
-            viewport: 'width=device-width, initial-scale=1',
-            charset: 'utf-8',
             meta: [
                 // Basic SEO
                 { name: 'description', content: 'Joseph Levarato - Full-stack developer specializing in Vue.js, Rust, and modern web technologies. Articles, projects, and insights about software development.' },
@@ -61,8 +65,6 @@ export default defineNuxtConfig({
                 { name: 'googlebot', content: 'index, follow' },
 
                 // Open Graph (Facebook, LinkedIn)
-                { property: 'og:type', content: 'website' },
-                { property: 'og:site_name', content: 'Joseph Levarato' },
                 { property: 'og:title', content: 'Joseph Levarato - Full-stack Developer' },
                 { property: 'og:description', content: 'Full-stack developer specializing in Vue.js, Rust, and modern web technologies. Articles, projects, and insights about software development.' },
                 { property: 'og:image:width', content: '1200' },
@@ -72,8 +74,8 @@ export default defineNuxtConfig({
 
                 // Twitter Card
                 { name: 'twitter:card', content: 'summary_large_image' },
-                { name: 'twitter:site', content: '@Drillan767' },
-                { name: 'twitter:creator', content: '@Drillan767' },
+                { name: 'twitter:site', content: '@jlevarato' },
+                { name: 'twitter:creator', content: '@jlevarato' },
                 { name: 'twitter:title', content: 'Joseph Levarato - Full-stack Developer' },
                 { name: 'twitter:description', content: 'Full-stack developer specializing in Vue.js, Rust, and modern web technologies. Articles, projects, and insights about software development.' },
                 { name: 'twitter:image:alt', content: 'Joseph Levarato - Full-stack Developer' },
@@ -86,7 +88,7 @@ export default defineNuxtConfig({
                 { name: 'apple-mobile-web-app-title', content: 'Joseph Levarato' },
 
                 // Additional SEO
-                { name: 'keywords', content: 'Joseph Levarato, Full-stack Developer, Vue.js, Rust, TypeScript, Web Development, Software Engineering' },
+                { name: 'keywords', content: 'Joseph Levarato, Full-stack Developer, Vue.js, Golang, TypeScript, Web Development, Software Engineering, WASM, Fintech' },
             ],
 
             link: [
